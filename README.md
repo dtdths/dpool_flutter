@@ -1,16 +1,16 @@
 # dpool_flutter
 
-A new Flutter project.
+## 1.关于 BottomNavigationBar 颜色设置
 
-## Getting Started
+文档中说明,根据当前 type 不同而有两种形式
+* >当 type = BottomNavigationBarType.shifting 时
+  
+  BottomNavigationBar 的背景色为当前激活的 BottomNavigationBarItem.backgroundColor 
 
-This project is a starting point for a Flutter application.
+* >当 BottomNavigationBarType.fixed 时
+  
+  BottomNavigationBar 的背景色为 ThemeData.canvasColor
 
-A few resources to get you started if this is your first Flutter project:
+BottomNavigationBarItem.icon 和 BottomNavigationBarItem.title 可以用 currentIndex 做动态改变，或直接用 BottomNavigationBar.fixedColor 当作激活时的颜色
 
-- [Lab: Write your first Flutter app](https://flutter.io/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.io/docs/cookbook)
-
-For help getting started with Flutter, view our 
-[online documentation](https://flutter.io/docs), which offers tutorials, 
-samples, guidance on mobile development, and a full API reference.
+## 2.flutter-provide

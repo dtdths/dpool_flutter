@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-Color unActiveColor = Color(0xff7ab3cc);
+// Color unActiveColor = Color(0xff7ab3cc);
 
 class Footer extends StatefulWidget {
   final Widget child;
@@ -16,8 +16,6 @@ class _FooterState extends State<Footer> {
   Widget build(BuildContext context) {
     return Theme(
       data: ThemeData(
-        // primaryColor: Color(0xff7ab3cc),
-        indicatorColor: Colors.red,
         canvasColor: Color(0xff247ba0), // 背景颜色
       ),
       child: BottomNavigationBar(

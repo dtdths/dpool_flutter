@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import './pages/home/home.dart';
+import './pages/navigationKeepAlive/navigation_keep_alive.dart';
 
 void main()=>runApp(Dpool());
 
@@ -13,7 +13,7 @@ class Dpool extends StatelessWidget {
         // canvasColor: Color(0xff247ba0),
         scaffoldBackgroundColor: Color(0xfff9f9f9),
       ),
-      home: Home(),
+      home: NavigationKeepAlive(),
     );
   }
 }
