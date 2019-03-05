@@ -1,7 +1,20 @@
 import 'package:flutter/material.dart';
-import './pages/navigationKeepAlive/navigation_keep_alive.dart';
+// import 'package:provide/provide.dart';
+import 'pages/navAndPage/index.dart';
+// import 'store/currentPageIndex.dart';
 
-void main()=>runApp(Dpool());
+// void main(){
+//   var currentPageIndex = CurrentPageIndex(2);
+
+//   var providers = Providers();
+
+//   providers
+//     ..provide(Provider<CurrentPageIndex>.value(currentPageIndex));
+
+//   runApp(ProviderNode(child: Dpool(), providers: providers));
+
+// }
+void main() => runApp(Dpool());
 
 class Dpool extends StatelessWidget {
   @override
@@ -9,11 +22,9 @@ class Dpool extends StatelessWidget {
     return MaterialApp(
       title: 'dpool',
       theme: ThemeData(
-        // primaryColor: Color(0xff76c1b3),
-        // canvasColor: Color(0xff247ba0),
-        scaffoldBackgroundColor: Color(0xfff9f9f9),
+        scaffoldBackgroundColor: Color(0xfff9f9f9), //背景色
       ),
-      home: NavigationKeepAlive(),
+      home: NavAndPage(),
     );
   }
 }
