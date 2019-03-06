@@ -38,9 +38,9 @@ class _NavAndPageState extends State<NavAndPage> {
           fixedColor: Colors.white,
           // type: BottomNavigationBarType.shifting,
           items: [
-            _createItem(Icons.home, '首页'),
-            _createItem(Icons.dashboard, '用户面板'),
-            _createItem(Icons.settings, '设置'),
+            _createItem(0xe608,'首页'),
+            _createItem(0xe699, '用户面板'),
+            _createItem(0xe65b, '设置'),
           ],
         ),
       ),
@@ -60,7 +60,7 @@ class _NavAndPageState extends State<NavAndPage> {
 
 BottomNavigationBarItem _createItem(icon, title) {
   return BottomNavigationBarItem(
-    icon: Icon(icon),
+    icon: Icon(IconData(icon,fontFamily:'IconFont')),
     title: Text(title),
   );
 }
