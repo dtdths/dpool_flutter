@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:dpool_flutter/pages/home/components/indexBanner.dart';
 
 class Home extends StatelessWidget {
   @override
@@ -14,8 +15,11 @@ class Home extends StatelessWidget {
           // textAlign:TextAlign.center
         ),
       ),
-      body: Center(
-        child: Text('home'),
+      body: Column(
+        children: <Widget>[
+          IndexBanner(),
+          Text('Craft beautiful UIs'),
+        ],
       ),
     );
   }

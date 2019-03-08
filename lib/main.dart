@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 // import 'package:provide/provide.dart';
 import 'pages/navAndPage/index.dart';
+import 'package:dpool_flutter/api/http.dart';
+
 // import 'store/currentPageIndex.dart';
 
 // void main(){
@@ -14,7 +16,12 @@ import 'pages/navAndPage/index.dart';
 //   runApp(ProviderNode(child: Dpool(), providers: providers));
 
 // }
-void main() => runApp(Dpool());
+
+
+void main(){
+  interceptors();
+  runApp(Dpool());
+}
 
 class Dpool extends StatelessWidget {
   @override

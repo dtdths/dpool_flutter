@@ -90,6 +90,16 @@ currentPageModel.value //get
 currentPageModel.changeIndex(index); //set
 ```
 
-## 5. flutter_swiper 轮播图
+## 5. 网络请求 dio
+[dio](https://github.com/flutterchina/dio/blob/master/README-ZH.md)
 
-## 6. 屏幕适配
+使用单例模式，通过 BaseOptions 完成基本配置，使用 interceptors.add 增加拦截器，拦截器需要在 main 里运行
+
+使用 async/await 返回一个 Future，可以使用 .then 进行后续处理
+
+## 6. flutter_swiper 轮播图
+[flutter_swiper](https://github.com/best-flutter/flutter_swiper)
+
+使用 FutureBuilder ，在请求完成后进行渲染，FutureBuilder.future 接收 dio 实例返回的 future，，在请求完成后进行渲染，FutureBuilder.builder: (context,snapshot) 中的 snapshot 接收请求状态和请求结果。
+
+## 7. 屏幕适配

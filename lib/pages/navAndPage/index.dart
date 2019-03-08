@@ -4,11 +4,12 @@ import 'package:dpool_flutter/pages/dashboard/index.dart';
 import 'package:dpool_flutter/pages/setting/index.dart';
 // import 'package:dpool_flutter/store/currentPageIndex.dart';
 // import 'package:provide/provide.dart';
+// import 'package:flutter/foundation.dart';
 
 class NavAndPage extends StatefulWidget {
-  final Widget child;
+  // final Widget child;
 
-  NavAndPage({Key key, this.child}) : super(key: key);
+  // NavAndPage({Key key, this.child}) : super(key: key);
 
   _NavAndPageState createState() => _NavAndPageState();
 }
@@ -48,6 +49,7 @@ class _NavAndPageState extends State<NavAndPage> {
   }
 
   void _onItemTapped(int index) {
+    if(_currentIndex == index) return;
     setState(() {
       _currentIndex = index;
       _controller.animateToPage(index,
