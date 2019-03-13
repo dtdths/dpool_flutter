@@ -1,40 +1,36 @@
 import 'package:flutter/material.dart';
 import 'package:dpool_flutter/api/api.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:dpool_flutter/utils/launchUrl.dart';
+
+final _height = 400; //banner高度
 
 class IndexBanner extends StatefulWidget {
   _IndexBannerState createState() => _IndexBannerState();
 }
 
 class _IndexBannerState extends State<IndexBanner> {
-  // List<dynamic> bannerList = [];
-  // void initState() {
-  //   super.initState();
-  //   banner({"type":"wap","language_type":"cn"}).then((data){
-  //     bannerList = data["data"];
-  //     print(bannerList is List<dynamic>);
-  //   });
-  // }
   @override
   Widget build(BuildContext context) {
-    return FutureBuilder(
-        future:banner({"type":"wap","language_type":"cn"}),
+    return FutureBuilder( //异步加载组件
+        future:httpBanner({"type":"wap","language_type":"cn"}), //请求
         builder: (context,snapshot){
           if(snapshot.hasData){
             List<dynamic> swiperDataList = snapshot.data["data"];
              return Column(
                children: <Widget>[
                 Container(
-                  height: 333.0,
+                  height: ScreenUtil.getInstance().setWidth(_height), //自适应
                   child: Swiper(
                     itemBuilder: (BuildContext context,int index){
                       return Image.network("${swiperDataList[index]['img_url']}",fit:BoxFit.fill);
                     },
                     onTap:(int index){
-                      print("${swiperDataList[index]['pre_url']}");
+                      launchURL(swiperDataList[index]['pre_url']);//打开浏览器
                     },
                     itemCount: swiperDataList.length,
-                    pagination: new SwiperPagination(),
+                    pagination: SwiperPagination(),
                     autoplay: true,
                   ),
                 ),   //页面顶部轮播组件
@@ -42,7 +38,7 @@ class _IndexBannerState extends State<IndexBanner> {
              );
           }else{
             return Container(
-              height: 333.0,
+              height: ScreenUtil.getInstance().setWidth(_height),
               child: Center(
                 child: Text('加载中'),
               ),
@@ -50,17 +46,5 @@ class _IndexBannerState extends State<IndexBanner> {
           }
         }
       );
-    
-    
-    
-    
-    //  new Swiper(
-    //   itemBuilder: (BuildContext context,int index){
-    //     return new Image.network("http://via.placeholder.com/350x150",fit: BoxFit.fill,);
-    //   },
-    //   itemCount: 3,
-    //   pagination: new SwiperPagination(),
-    //   control: new SwiperControl(),
-    // );
   }
 }

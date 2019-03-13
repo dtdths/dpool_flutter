@@ -1,7 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:dpool_flutter/api/http.dart';
 
-Future banner(params)async {
+Future httpBanner(params)async {
   try{
     Response response;
     response = await dio.get("/v3/pools/banner",queryParameters:params);
@@ -11,6 +11,15 @@ Future banner(params)async {
   }
 }
 
+Future httpGetNoticeList(params)async {
+  try{
+    Response response;
+    response = await dio.post("/v3/get-notice-list",queryParameters:params);
+    return response.data;
+  }catch(e){
+    return print('ERROR:======>$e');
+  }
+}
 // Future getHttp(params)async{
 //     try{
 //       Response response;

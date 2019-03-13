@@ -103,3 +103,5 @@ currentPageModel.changeIndex(index); //set
 使用 FutureBuilder ，在请求完成后进行渲染，FutureBuilder.future 接收 dio 实例返回的 future，，在请求完成后进行渲染，FutureBuilder.builder: (context,snapshot) 中的 snapshot 接收请求状态和请求结果。
 
 ## 7. 屏幕适配
+
+## 8. url_launcher
