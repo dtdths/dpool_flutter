@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:dpool_flutter/pages/home/components/indexBanner.dart';
 import 'package:dpool_flutter/pages/home/components/indexNotices.dart';
+import 'package:dpool_flutter/pages/home/components/indexTable.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final _paddingLR = ScreenUtil.getInstance().setWidth(30);
+    final _paddingTB = ScreenUtil.getInstance().setWidth(20);
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Color(0xffffffff),
@@ -19,14 +23,22 @@ class Home extends StatelessWidget {
       ),
       body: Column(
         children: <Widget>[
-          Stack( //层叠定位
+          Stack(
+            //层叠定位
             alignment: AlignmentDirectional.bottomStart,
             children: <Widget>[
+              //轮播
               IndexBanner(),
+              //新闻
               IndexNotices()
             ],
           ),
-          Text('Craft beautiful UIs'),
+          Padding(
+            padding: EdgeInsets.fromLTRB(
+                _paddingLR, _paddingTB, _paddingLR, _paddingTB),
+            // 币种列表
+            child: IndexTable(),
+          )
         ],
       ),
     );

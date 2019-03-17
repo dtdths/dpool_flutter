@@ -9,10 +9,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 // import 'package:flutter/foundation.dart';
 
 class NavAndPage extends StatefulWidget {
-  // final Widget child;
-
-  // NavAndPage({Key key, this.child}) : super(key: key);
-
   _NavAndPageState createState() => _NavAndPageState();
 }
 

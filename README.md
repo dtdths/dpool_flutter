@@ -1,13 +1,14 @@
 # dpool_flutter
+从0开始构建 flutter 应用，业余时间边学边写。
 
 ## 1. 关于 BottomNavigationBar 颜色设置
 
 文档中说明,根据当前 type 不同而有两种形式
-* >当 type = BottomNavigationBarType.shifting 时
+ 1. 当 type = BottomNavigationBarType.shifting 时
   
   BottomNavigationBar 的背景色为当前激活的 BottomNavigationBarItem.backgroundColor 
 
-* >当 BottomNavigationBarType.fixed 时
+ 2. 当 BottomNavigationBarType.fixed 时
   
   BottomNavigationBar 的背景色为 ThemeData.canvasColor
 
@@ -97,11 +98,43 @@ currentPageModel.changeIndex(index); //set
 
 使用 async/await 返回一个 Future，可以使用 .then 进行后续处理
 
-## 6. flutter_swiper 轮播图
-[flutter_swiper](https://github.com/best-flutter/flutter_swiper)
+## 6. 轮播图
+使用 [flutter_swiper](https://github.com/best-flutter/flutter_swiper) 根据接口图片 url 创建轮播图
 
 使用 FutureBuilder ，在请求完成后进行渲染，FutureBuilder.future 接收 dio 实例返回的 future，，在请求完成后进行渲染，FutureBuilder.builder: (context,snapshot) 中的 snapshot 接收请求状态和请求结果。
 
 ## 7. 屏幕适配
+使用 [flutter_screenutil](https://github.com/OpenFlutter/flutter_screenutil) 
 
-## 8. url_launcher
+使用时首先在主页面进行初始化
+```dart
+build(
+  ScreenUtil.instance = ScreenUtil(width: 750, height: 1334)
+        ..init(context); 
+  //...
+)
+```
+调用
+```dart
+build(
+  ScreenUtil.getInstance().setWidth(_height)
+  ScreenUtil().setSp(_fontSize) //字体大小，默认不随系统设置变
+  //...
+)
+```
+
+## 8. 轮播图点击打开网页
+flutter没有webview,暂时使用
+[url_launcher](https://github.com/flutter/plugins/tree/master/packages/url_launcher) 直接调用浏览器打开链接
+
+## 9. Stack 层叠定位
+在 home/index.dart 组合 banner 和 noticeList，使用  Positioned 与 Expanded 会报错，暂时不知道怎么解决，使用 Stack.alignment 属性完成效果
+```dart
+Stack( //层叠定位
+  alignment: AlignmentDirectional.bottomStart,
+  children: <Widget>[
+    IndexBanner(),
+    IndexNotices()
+  ],
+),
+```
