@@ -138,3 +138,8 @@ Stack( //层叠定位
   ],
 ),
 ```
+
+## 10.
+1. 滚动 ListView
+纵向超出屏幕后时不会滚动的，会出现警告。使用ListView使视图滚动。
+2. Row 使用 mainAxisAlignment: MainAxisAlignment.center 居中

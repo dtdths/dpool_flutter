@@ -23,6 +23,11 @@ class _NavAndPageState extends State<NavAndPage> {
     return Scaffold(
       body: PageView(
         controller: _controller,
+        onPageChanged: (index) {
+          setState(() {
+            _currentIndex = index;
+          });
+        },
         children: <Widget>[
           Home(),
           Dashboard(),
@@ -35,7 +40,16 @@ class _NavAndPageState extends State<NavAndPage> {
         ),
         child: BottomNavigationBar(
           currentIndex: _currentIndex,
-          onTap: _onItemTapped,
+          onTap: (index) {
+            if (_currentIndex == index) return;
+            setState(() {
+              _currentIndex = index;
+              _controller.animateToPage(index,
+                  duration: Duration(milliseconds: 200), curve: Curves.ease);
+              //Provide.value<CurrentPageIndex>(context).value
+              //Provide.value<CurrentPageIndex>(context).changeIndex(index); // navIndex状态管理
+            });
+          },
           fixedColor: Colors.white,
           // type: BottomNavigationBarType.shifting,
           items: [
@@ -46,17 +60,6 @@ class _NavAndPageState extends State<NavAndPage> {
         ),
       ),
     );
-  }
-
-  void _onItemTapped(int index) {
-    if (_currentIndex == index) return;
-    setState(() {
-      _currentIndex = index;
-      _controller.animateToPage(index,
-          duration: Duration(milliseconds: 200), curve: Curves.ease);
-      //Provide.value<CurrentPageIndex>(context).value
-      //Provide.value<CurrentPageIndex>(context).changeIndex(index); // navIndex状态管理
-    });
   }
 }
 

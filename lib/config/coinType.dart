@@ -1,35 +1,34 @@
-import'package:flutter/material.dart';
 final coinTypeList = [
   {
     'coinType':'btc',
-    'icon':Image.asset('assets/icon/coinType/btc.png'),
+    'icon':'assets/icon/coinType/btc.png',
   },
   {
     'coinType':'bsv',
-    'icon':Image.asset('assets/icon/coinType/bsv.png'),
+    'icon':'assets/icon/coinType/bsv.png',
   },
   {
     'coinType':'bch',
-    'icon':Image.asset('assets/icon/coinType/bch.png'),
+    'icon':'assets/icon/coinType/bch.png',
   },
   {
     'coinType':'dcr',
-    'icon':Image.asset('assets/icon/coinType/dcr.png'),
+    'icon':'assets/icon/coinType/dcr.png',
   },
   {
     'coinType':'zec',
-    'icon':Image.asset('assets/icon/coinType/zec.png'),
+    'icon':'assets/icon/coinType/zec.png',
   },
   {
     'coinType':'ltc',
-    'icon':Image.asset('assets/icon/coinType/ltc.png'),
+    'icon':'assets/icon/coinType/ltc.png',
   },
   {
     'coinType':'eth',
-    'icon':Image.asset('assets/icon/coinType/eth.png'),
+    'icon':'assets/icon/coinType/eth.png',
   },
   {
     'coinType':'etp',
-    'icon':Image.asset('assets/icon/coinType/etp.png'),
+    'icon':'assets/icon/coinType/etp.png',
   },
 ];

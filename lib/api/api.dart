@@ -20,6 +20,18 @@ Future httpGetNoticeList(params)async {
     return print('ERROR:======>$e');
   }
 }
+
+Future httpCoinstats()async {
+  try{
+    Response response;
+    response = await dio.get("/v3/pools/coinstats");
+    return response.data;
+  }catch(e){
+    return print('ERROR:======>$e');
+  }
+}
+
+
 // Future getHttp(params)async{
 //     try{
 //       Response response;
