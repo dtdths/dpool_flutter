@@ -2,33 +2,41 @@ final coinTypeList = [
   {
     'coinType':'btc',
     'icon':'assets/icon/coinType/btc.png',
-  },
-  {
-    'coinType':'bsv',
-    'icon':'assets/icon/coinType/bsv.png',
+    'baseUnit':'H',
   },
   {
     'coinType':'bch',
     'icon':'assets/icon/coinType/bch.png',
+    'baseUnit':'H',
   },
   {
-    'coinType':'dcr',
-    'icon':'assets/icon/coinType/dcr.png',
-  },
-  {
-    'coinType':'zec',
-    'icon':'assets/icon/coinType/zec.png',
+    'coinType':'bsv',
+    'icon':'assets/icon/coinType/bsv.png',
+    'baseUnit':'H',
   },
   {
     'coinType':'ltc',
     'icon':'assets/icon/coinType/ltc.png',
+    'baseUnit':'H',
   },
   {
     'coinType':'eth',
     'icon':'assets/icon/coinType/eth.png',
+    'baseUnit':'H',
+  },
+  {
+    'coinType':'dcr',
+    'icon':'assets/icon/coinType/dcr.png',
+    'baseUnit':'H',
+  },
+  {
+    'coinType':'zec',
+    'icon':'assets/icon/coinType/zec.png',
+    'baseUnit':'Sol',
   },
   {
     'coinType':'etp',
     'icon':'assets/icon/coinType/etp.png',
+    'baseUnit':'H',
   },
 ];

@@ -4,7 +4,8 @@ import 'package:flutter_swiper/flutter_swiper.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:dpool_flutter/utils/launchUrl.dart';
 
-final _height = 400; //banner高度
+
+final _w400 = ScreenUtil.getInstance().setWidth(400) as double;//banner高度
 
 class IndexBanner extends StatefulWidget {
   _IndexBannerState createState() => _IndexBannerState();
@@ -21,7 +22,7 @@ class _IndexBannerState extends State<IndexBanner> {
              return Column(
                children: <Widget>[
                 Container(
-                  height: ScreenUtil.getInstance().setWidth(_height), //自适应
+                  height: _w400, //自适应
                   child: Swiper(
                     itemBuilder: (BuildContext context,int index){
                       return Image.network("${swiperDataList[index]['img_url']}",fit:BoxFit.fill);
@@ -38,7 +39,7 @@ class _IndexBannerState extends State<IndexBanner> {
              );
           }else{
             return Container(
-              height: ScreenUtil.getInstance().setWidth(_height),
+              height: _w400,
               child: Center(
                 child: Text('加载中'),
               ),

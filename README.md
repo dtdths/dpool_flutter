@@ -143,3 +143,11 @@ Stack( //层叠定位
 1. 滚动 ListView
 纵向超出屏幕后时不会滚动的，会出现警告。使用ListView使视图滚动。
 2. Row 使用 mainAxisAlignment: MainAxisAlignment.center 居中
+
+
+<!-- items
+        .map((question) =>
+            Question(question["owner"]["display_name"], question["title"]))
+        .toList(); -->
+
+## 11. setState 时会触发 build。如果把请求写在build里，请求成功会触发setState，改变build后会重复请求，无限循环了。

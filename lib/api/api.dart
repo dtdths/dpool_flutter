@@ -31,7 +31,25 @@ Future httpCoinstats()async {
   }
 }
 
+Future httpPoolStats()async {
+  try{
+    Response response;
+    response = await dio.post("/v3/statistics/pool-stats");
+    return response.data;
+  }catch(e){
+    return print('ERROR:======>$e');
+  }
+}
 
+Future httpInPoolStats(params)async {
+  try{
+    Response response;
+    response = await dio.post("/innovate/pool-stats",queryParameters:params);
+    return response.data;
+  }catch(e){
+    return print('ERROR:======>$e');
+  }
+}
 // Future getHttp(params)async{
 //     try{
 //       Response response;
